@@ -9,16 +9,16 @@ local action = function(msg, blocks, ln)
     math.randomseed( os.time() );
     var = math.random(0,4); math.random(0,4); math.random(0,4);
     if var == 0 then
-        api.sendMessage(msg.chat.id, 'Hey *' ..name.. '* ID '..iduser..', Cuida tu lenguaje o serás expulsado', true)
+        api.sendMessage(msg.chat.id, 'Hey *' ..name.. '* ID '..iduser..',Watch your language or you will be expelled ', true)
 	   elseif var == 1 then
- 	   	api.sendMessage(msg.chat.id, 'Recuerda *' ..name.. '* ID '..iduser..', no usar un mal lenguaje aquí, o serás expulsado/a', true)
+ 	   	api.sendMessage(msg.chat.id, 'Recuerda *' ..name.. '* ID '..iduser..', expelled /a by rude /a', true)
 	   elseif var == 2 then
- 	   	api.sendMessage(msg.chat.id, 'Lo siento, *' ..name.. '*, ID '..iduser..', expulsado/a por grosero/a', true)
+ 	   	api.sendMessage(msg.chat.id, 'Lo siento, *' ..name.. '*, ID '..iduser..', expelled /a by rude /a', true)
  	   api.kickUser(msg.chat.id, msg.from.id)
 	   elseif var == 3 then
-  	   	api.sendMessage(msg.chat.id, '*' ..name.. '* ID '..iduser..', si sigues enviando malas palabras serás baneado/a definitivamente', true)
+  	   	api.sendMessage(msg.chat.id, '*' ..name.. '* ID '..iduser..', if you keep sending bad words you will be banned /definitely', true)
   	 elseif var == 4 then
-  	   	api.sendMessage(msg.chat.id, 'Lo siento *' ..name.. '*, ID '..iduser..', baneado/a por grosero/a.', true)
+  	   	api.sendMessage(msg.chat.id, 'Lo siento *' ..name.. '*, ID '..iduser..', banned /a by rude /a.', true)
  	   api.kickChatMember(msg.chat.id, msg.from.id)
   end
 end
