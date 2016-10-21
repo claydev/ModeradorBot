@@ -1,6 +1,6 @@
 return {
 	bot_api_key = io.open("./data/key","r"):read(),
-	version = '3.1', -- /aupdate for v3.1
+	version = '1.0', -- /aupdate for v3.1
 	testing_mode = false,
 	cmd = '^[/!#]',
 	admin = {
@@ -24,7 +24,7 @@ return {
 		log_api_errors = false
 	},
 	channel = 'readchannel', --channel username with the '@'
-	help_group = 'https://telegram.me/joinchat/CsanyT7Z5Wxk8eO_se0BCA', --group link, not username!
+	help_group = 'https://telegram.me/joinchat/AA7QHzyznefTziw_dzSVoQ', --group link, not username!
 	languages = 'languages.lua',
 	plugins_esenciales = {
 		'onmessage.lua',
@@ -126,14 +126,14 @@ return {
 		'eightball.lua'
 	},
 	available_languages = {
-		'es',
+		--'es',
 		--'it',
 		'en'
 		--'br',
 		--'ru',
 		--'de',
 		--'sv',
-		--'ar',
+		'ar',
 		--'fr'
 		--more to come
 	},
