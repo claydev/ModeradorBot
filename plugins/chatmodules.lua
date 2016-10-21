@@ -4,7 +4,7 @@ if not (msg.chat.type == 'private') and is_mod(msg) then end
 
  if blocks[1] == 'groseria' then
 		if not blocks[2]:match('^(enable)$') and not blocks[2]:match('^(disable)$') then
-			api.sendReply(msg, '*ERROR*\nDebe usarse de esta manera:\n`/groseria enable|disable`', true)
+			api.sendReply(msg, '*ERROR*\nIt is used in this way:\n`/groseria enable|disable`', true)
 			return
 		end
 		local status = blocks[2]
@@ -22,70 +22,70 @@ if not (msg.chat.type == 'private') and is_mod(msg) then end
 
  if blocks[1] == 'bots' then
 		if not blocks[2]:match('^(enable)$') and not blocks[2]:match('^(disable)$') then
-			api.sendReply(msg, '*ERROR*\nDebe usarse de esta manera:\n`/bots enable|disable`', true)
+			api.sendReply(msg, '*ERROR*\nIt is used in this way:\n`/bots enable|disable`', true)
 			return
 		end
 		local status = blocks[2]
 		local current = db:hget('chat:'..msg.chat.id..':settings', 'bots')
 		if current == status then
 			grep = status:gsub('^enable$', 'permitidos'):gsub('^disable$', 'prohibidos')
-			api.sendMessage(msg.chat.id, 'Los bots ya estaban *'..grep..'*', true)		
+			api.sendMessage(msg.chat.id, 'The bots were already *'..grep..'*', true)		
 		else
 			db:hset('chat:'..msg.chat.id..':settings', 'bots', status)
 			grep = status:gsub('^enable$', 'permitidos'):gsub('^disable$', 'prohibidos')
-			api.sendMessage(msg.chat.id, 'Ahora los bots estarán *'..grep..'*', true)
+			api.sendMessage(msg.chat.id, 'Now the bots are *'..grep..'*', true)
 		end
 	end
  
 
  if blocks[1] == 'spam' then
 		if not blocks[2]:match('^(enable)$') and not blocks[2]:match('^(disable)$') then
-			api.sendReply(msg, '*ERROR*\nDebe usarse de esta manera:\n`/spam enable|disable`', true)
+			api.sendReply(msg, '*ERROR*\nIt is used in this way:\n`/spam enable|disable`', true)
 			return
 		end
 		local status = blocks[2]
 		local current = db:hget('chat:'..msg.chat.id..':settings', 'spam')
 		if current == status then
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'El spam ya estaba *'..grep..'*', true)		
+			api.sendMessage(msg.chat.id, '*El spam ya estaba *'..grep..'*', true)		
 		else
 			db:hset('chat:'..msg.chat.id..':settings', 'spam', status)
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'Ahora el spam estará *'..grep..'*', true)
+			api.sendMessage(msg.chat.id, '*Spam is now *'..grep..'*', true)
 		end
 	end
   
  if blocks[1] == 'codes' then
 		if not blocks[2]:match('^(enable)$') and not blocks[2]:match('^(disable)$') then
-			api.sendReply(msg, '*ERROR*\nDebe usarse de esta manera:\n`/codes enable|disable`', true)
+			api.sendReply(msg, '*ERROR*\nIt is used in this way:\n`/codes enable|disable`', true)
 			return
 		end
 		local status = blocks[2]
 		local current = db:hget('chat:'..msg.chat.id..':settings', 'codes')
 		if current == status then
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'El codes ya estaba *'..grep..'*', true)		
+			api.sendMessage(msg.chat.id, 'The codex was already *'..grep..'*', true)		
 		else
 			db:hset('chat:'..msg.chat.id..':settings', 'codes', status)
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'Ahora el codes estará *'..grep..'*', true)
+			api.sendMessage(msg.chat.id, 'Now the codex will be *'..grep..'*', true)
 		end
 	end
 
  if blocks[1] == 'saludo' then
 		if not blocks[2]:match('^(enable)$') and not blocks[2]:match('^(disable)$') then
-			api.sendReply(msg, '*ERROR*\nDebe usarse de esta manera:\n`/saludo enable|disable`', true)
+			api.sendReply(msg, '*ERROR*\nIt is used in this way:\n`/saludo enable|disable`', true)
 			return
 		end
 		local status = blocks[2]
 		local current = db:hget('chat:'..msg.chat.id..':settings', 'saludo')
 		if current == status then
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'El saludo ya estaba *'..grep..'*', true)		
+			api.sendMessage(msg.chat.id, 'The greeting was already *'..grep..'*', true)		
 		else
 			db:hset('chat:'..msg.chat.id..':settings', 'saludo', status)
 			grep = status:gsub('^enable$', 'permitido'):gsub('^disable$', 'prohibido')
-			api.sendMessage(msg.chat.id, 'Ahora el saludo estará *'..grep..'*', true)
+			api.sendMessage(msg.chat.id, 'Now the greeting will be *'..grep..'*', true)
 		end
 	end
 end
