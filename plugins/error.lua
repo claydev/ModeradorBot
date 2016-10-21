@@ -1,6 +1,6 @@
 local action = function(msg, blocks)
 if blocks[1] == 'a' then
-api.sendReply(msg, make_text '*ERROR*\n`Debes ingresar un texto despúes del comando`.', true)
+api.sendReply(msg, make_text '*ERROR*\n`You must enter a text after the command`.', true)
 end
 end
 
