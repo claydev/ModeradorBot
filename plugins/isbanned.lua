@@ -3,7 +3,7 @@ local action = function(msg, blocks)
 	if blocks[1] == 'isbanned' then
 		if not blocks[2] then
 		if not msg.reply then
-			api.sendReply(msg, '🔰Respondele a alguien para saber si está globalmente baneado (en grupos) y te enviaré el resultado por privado o consulta por privado adjuntando la ID: /isbanned (ID) por ejemplo: /isbanned 123456789')
+			api.sendReply(msg, '🔰Respond to know if someone is banned globally (in groups) and will send the result by private or private consultation by attaching the ID: /isbanned (ID) for example: /isbanned 970783')
 			return
 		else
 			id = msg.reply.from.id
@@ -20,9 +20,9 @@ local action = function(msg, blocks)
 		local list = grep:read("*a")
 		end
 		if is_blocked_global(id) or list == "" then
-        api.sendMessage(msg.from.id, '✅ Este usuario si esta globalmente banneado.')
+        api.sendMessage(msg.from.id, '✅ This user if this globally banned.')
       else
-        api.sendMessage(msg.from.id, '❌❗️Este usuario no esta globalmente banneado. Si quieres reportarlo puedes hacerlo por privado a @Webrom o @Webrom2. Gracias.')
+        api.sendMessage(msg.from.id, '❌❗️ This user is not globally banned. If you want to report you can do so by private to @saadthamer or @saadthamer_bot . thanks.')
       end
     end
 
