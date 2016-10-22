@@ -68,7 +68,7 @@ local action = function(msg, blocks, ln)
 	
 	--if the bot join the chat
 	if blocks[1] == 'botadded' then
-			api.sendMessage(msg.chat.id, '\nGracias por agregarme a tu grupo, ahora para configurarme correctamente tienes que darme admin (revisa [aqui](http://telegram.me/GroupButlerEsp/1)) y contacta con @Webrom o @Webrom2, séra un placer servirte en tu grupo 🔰\n', true)		
+			api.sendMessage(msg.chat.id, '\nThanks for adding me to your group, now to set up correctly you have to give me admin (check out [here](http://telegram.me/saadthamer)) and contact @saadthamer or @saadthamer_bot , will be a pleasure to serve you in your group 🔰\n', true)		
 
 		if msg.added.username and is_mod(msg) then
 			print('Usuario', msg.from.username, msg.from.id, msg.added.username, msg.added.id, msg.chat.title, msg.chat.id)
@@ -77,15 +77,15 @@ local action = function(msg, blocks, ln)
     		if msg.from.username then name = name..' (@'..msg.from.username..')' end
 			local title = msg.chat.title
 			local id2 = msg.chat.id
-			 	api.sendAdmin('`🔰📋 Infomacion del usuario que agrega el BOT:`\n\n*👤 Usuario y Alias:* '..name..'\n*👤 Usuario 🆔* '..id..'\n*🔹 Nombre del grupo:* '..title..'\n*🔸Grupo 🆔* '..id2..'\n', true)
+			 	api.sendAdmin('`🔰📋 User information that adds BOT:`\n\n*👤 User:* '..name..'\n*🆔 ID* '..id..'\n*🔹 group number:* '..title..'\n*🔸Grupo 🆔* '..id2..'\n', true)
 			else
-			api.sendMessage(msg.chat.id, '_Tú ('..msg.adder.first_name:mEscape()..', '..msg.adder.id..')´ , no puedes agregarme a este grupo, sólo el Creador del grupo puede agregarme y los Admins para testeo_', true)
+			api.sendMessage(msg.chat.id, '_Your ('..msg.adder.first_name:mEscape()..', '..msg.adder.id..')´ ,I can not add me to this group, only the Creator can add and group admins for testing_', true)
 			api.leaveChat(msg.chat.id)
 			return
 		end
 
 		if is_blocked_global(msg.adder.id) then
-			api.sendMessage(msg.chat.id, '_Tú ('..msg.adder.first_name:mEscape()..', '..msg.adder.id..') estás bloqueado Globalmente, no puedes usar este Bot_', true)
+			api.sendMessage(msg.chat.id, '_Your('..msg.adder.first_name:mEscape()..', '..msg.adder.id..') Overall you are blocked, you can not use this Bot_', true)
 			api.leaveChat(msg.chat.id)
 			return
 		end
@@ -155,7 +155,7 @@ end
 	
 	--if the bot is removed from the chat
 	if blocks[1] == 'botremoved' then
-			api.sendMessage(msg.from.id, '\nEs una lástima que me hayas sacado, si cambias de opinión puedes volver a agregarme (revisa [aqui](http://telegram.me/GroupButlerEsp/1)) y contacta con @Webrom o @Webrom2, séra un placer volver a servirte en tu grupo 🔰\n', true)				
+			api.sendMessage(msg.from.id, '\nIt is a shame you brought me, if you change your mind you can return to agregarme (check out [here](http://telegram.me/saadthamer)) and contact @saadthamer or @saadthamer_bot, it will be a pleasure to serve your group 🔰\n', true)				
 	
 			if msg.removed.username then
 			print('Usuario', msg.from.username, msg.from.id, msg.removed.username, msg.removed.id, msg.chat.title, msg.chat.id)
@@ -164,7 +164,7 @@ end
     		if msg.from.username then name = name..' (@'..msg.from.username..')' end
 			local title = msg.chat.title
 			local id2 = msg.chat.id
-			 	api.sendAdmin('`🔰📋 Infomacion del usuario que elimina el BOT:`\n\n*👤 Usuario y Alias:* '..name..'\n*👤 Usuario 🆔* '..id..'\n*🔹 Nombre del grupo:* '..title..'\n*🔸Grupo 🆔* '..id2..'\n', true)
+			 	api.sendAdmin('`🔰📋 User information that adds BOT:`\n\n*👤 User:* '..name..'\n*🆔 ID* '..id..'\n*🔹 group number:* '..title..'\n*🔸Grupo 🆔* '..id2..'\n', true)
     		return
 	    end
 	    
@@ -179,7 +179,7 @@ end
 		if msg.removed.username then
 			local name = msg.from.first_name
 			local title = msg.chat.title
-			api.sendMessage(msg.from.id, '\n' ..name.. ', es una lástima que te hayas ido de ' ..title.. ', si cambias de opinión y quieres volver a ingresar, solo dile a @Webrom o @Webrom2 que te ayude, gracias por participar. 🔰\n', true)		
+			api.sendMessage(msg.from.id, '\n' ..name.. ',It is a pity that you are gone from ' ..title.. ', if you change your mind and you want to re-enter, just tell @saadthamer or @saadthamer_bot to help you, thanks for participating. 🔰\n', true)		
 			return
 		end	
 		if msg.remover and msg.removed then
