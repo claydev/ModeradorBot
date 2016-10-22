@@ -3,7 +3,7 @@ local function do_keybaord_credits()
     keyboard.inline_keyboard = {
     	{
     		{text = 'Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = 'GitHub', url = 'https://github.com/RememberTheAir/GroupButler'},
+    		{text = 'Dev', url = 'https://telegram.me/saadthamer'},
     		{text = 'Rate me!', url = 'https://telegram.me/storebot?start='..bot.username},
 		}
 	}
@@ -165,12 +165,12 @@ local action = function(msg, blocks, ln)
 if msg.chat.title then
   nombregrupo = msg.chat.title
  else
-   nombregrupo = '_❌  Este es un chat privado_'
+   nombregrupo = '_❌ This is a private chat_'
  end
  if msg.reply.from.username then
   username = '@'..msg.reply.from.username:mEscape()
  else
-  username = '_❌  Este usuario no dispone de un alias_'
+  username = '_❌  This user does not have an alias_'
  end
    else
     name = msg.from.first_name
@@ -181,15 +181,15 @@ if msg.chat.title then
   if msg.from.username then
   username = '@'..msg.from.username:mEscape()
  else
-  username = '_❌  Este usuario no dispone de un alias_'
+  username = '_❌  This user does not have an alias_'
  end
  if msg.chat.title then
   nombregrupo = msg.chat.title
  else
-   nombregrupo = '_❌  Este es un chat privado_'
+   nombregrupo = '_❌  This is a private chat_'
  end
    end
-   api.sendReply(msg, '`🔰📋 Infomacion del grupo y del usuario:`\n\n*👤 Usuario:* '..name..'\n*👤 Usuario 🆔* '..id..'\n*🔸Alias:*' ..username..'\n*🔹 Nombre del grupo:* '..nombregrupo..'\n*🔸Grupo 🆔* '..id2..'\n', true)
+   api.sendReply(msg, '`🔰📋 Information and user group:`\n\n*👤 User:* '..name..'\n* 🆔 ID* '..id..'\n*🔸Username:*' ..username..'\n*🔹 Group Number:* '..nombregrupo..'\n*🔸Grupo 🆔* '..id2..'\n', true)
   end
   	if blocks[1] == 'id' then
  		if not(msg.chat.type == 'private') and not is_mod(msg) then return end
