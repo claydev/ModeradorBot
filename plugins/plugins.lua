@@ -4,31 +4,31 @@ local action = function(msg, blocks)
 	
  if blocks[1] == "plugins" then
   if not blocks[2] then
-	api.sendMessage(msg.chat.id, "*Plugins activados*\n"..load_plugins(), true)
+	api.sendMessage(msg.chat.id, "*Plugins activated*\n"..load_plugins(), true)
   end
 
    if blocks[2] == "enable" then
 	 enabled = enable_plugin(msg, blocks)
 	 if enabled == true then
-	 	api.sendReply(msg, "✅ Plugin _"..blocks[3]..".lua_ *activado* exitosamente.", true)
+	 	api.sendReply(msg, "✅ Plugin _"..blocks[3]..".lua_ *deactivated* successfully.", true)
 	 	bot_init(true)
 	 else
-	 	api.sendReply(msg, "❌ El plugin _"..blocks[3]..".lua_ *ya fué activado* anteriormente ó *posiblemente no existe*.", true)
+	 	api.sendReply(msg, "❌ the plugin _"..blocks[3]..".lua_ *and it was previously deactivated *.", true)
 	 end
    end
  
    if blocks[2] == "disable" then
 	 disabled = disable_plugin(msg, blocks)
 	 if disabled == true then
-	 	api.sendReply(msg, "✅ Plugin _"..blocks[3]..".lua_ *desactivado* exitosamente.", true)
+	 	api.sendReply(msg, "✅ Plugin _"..blocks[3]..".lua_ *deactivated* successfully.", true)
 	 	bot_init(true)
 	 else
-	 	api.sendReply(msg, "❌ El plugin _"..blocks[3]..".lua_ *ya fué desactivado* anteriormente.", true)
+	 	api.sendReply(msg, "❌ the plugin _"..blocks[3]..".lua_ *and it was previously deactivated *.", true)
 	 end
    end  
  end
  else
- api.sendMessage(msg.chat.id, "🚫 Para realizar esta opción *requieres permisos de creador*.", true)
+ api.sendMessage(msg.chat.id, "🚫 To make this option *requires permits creator *.", true)
 end
 end
 
