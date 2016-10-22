@@ -84,9 +84,9 @@ local action = function(msg, blocks)
  	
  	-- Blocks de formatos
  if blocks[1] == 'formatos' then
- 	api.sendReply(msg, make_text '_Si enviaste este mensaje en un grupo, el bot te enviará los formatos compatibles solamente por PV_\n\n_Si no haz iniciado el bot primero inicialo_.\nIniciame [aquí](http://telegram.me/Moderadores_Bot)', true)
+ 	api.sendReply(msg, make_text '_If you send this message in a group, the bot will send only the formats supported by PV_\n\n_If you have not started the initial bot first_.\n Iniciame [here](http://telegram.me/Kepper7bot)', true)
  	-- Responde con los formatos disponibles al PV
- 	api.sendMessage(msg.from.id, make_text '*Haz solicitado los formatos disponibles*.\n\n_Formatos de archivos_\n- jpg\n- jpeg\n- png\n- psd\n- swf\n- tar\n- tar.gz\n- gz\n- zip\n- rar\n- lua\n- webp\n- sh\n- img\n- lnk\n- gif\n- rdb\n- exe\n- mp3\n- wma\n- aac\n- flac\n- mp4\n- webm\n- wmv\n- apk\n- ipa\n- avi\n\n_Formatos de video_\n- mp4\n- webm\n- mov\n- mwv\n- dvd\n- avi\n- mkv\n- 3gp\n- 3g2\n- m4v\n- m4p\n- divx\n- wmv\n\n_Formatos de imagen_\n- jpeg\n- jpg\n- png\n- tiff\n- psd\n\n_Formatos de stickers_\n- webp\n\n_Formatos de gif_\n- gif\n- mp4 ', true)
+ 	api.sendMessage(msg.from.id, make_text '*You have requested formats available*.\n\n_File Formats_\n- jpg\n- jpeg\n- png\n- psd\n- swf\n- tar\n- tar.gz\n- gz\n- zip\n- rar\n- lua\n- webp\n- sh\n- img\n- lnk\n- gif\n- rdb\n- exe\n- mp3\n- wma\n- aac\n- flac\n- mp4\n- webm\n- wmv\n- apk\n- ipa\n- avi\n\n_Formatos de video_\n- mp4\n- webm\n- mov\n- mwv\n- dvd\n- avi\n- mkv\n- 3gp\n- 3g2\n- m4v\n- m4p\n- divx\n- wmv\n\n_Formatos de imagen_\n- jpeg\n- jpg\n- png\n- tiff\n- psd\n\n_Formatos de stickers_\n- webp\n\n_Formatos de gif_\n- gif\n- mp4 ', true)
 end -- cierre de blocks
 end -- cierre de script completo
  return {
