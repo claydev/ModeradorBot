@@ -39,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🔰 Todos los Usuarios', callback_data = '!user'}}
+		bottom_bar = {{text = '🔰 All users', callback_data = '!user'}}
 	else
-	    bottom_bar = {{text = '🔰 Sólo Admins', callback_data = '!mod'}}
+	    bottom_bar = {{text = '🔰 Admins', callback_data = '!mod'}}
 	end
-	table.insert(bottom_bar, {text = 'Info e Interés', callback_data = '!info_button'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = 'Info and Interest', callback_data = '!info_button'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -52,17 +52,14 @@ local function do_keyboard_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '✅ Canal', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = '✅ GitHub', url = 'https://github.com/ridrogo/ModeradorBot'},
+    		{text = '✅ Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    		{text = '✅ Dev', url = 'https://telegram.me/saadthamer'},
     	},	
-    	{	
+    	--[[{	
     		{text = '✅ Wamods.com', url = 'https://telegram.me/Wamods'},
     		{text = '✅ WereWolf Español Oficial', url = 'https://telegram.me/werewolfespoficial'},
-    	},	
-        {
-            {text = '✅ Death Note Serie', url = 'https://telegram.me/DeathNoteSerie'},
-        	{text = '✅ Evalúame!', url = 'https://telegram.me/storebot?start=GroupButlerEsp_bot'},
-		},
+         },	]]--
+    
 		{
 		    {text = '🔙', callback_data = '!user'}
         }
@@ -74,11 +71,11 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '👥 Agregame a tu grupo', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
-    		{text = '📢 Canal de ayuda', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    		{text = '👥 Dev', url = 'https://telegram.me/saadthamer'},
+    		{text = '📢 Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
-	        {text = '📕 Todos los Comandos', callback_data = '!user'}
+	        {text = '📕 All Commands', callback_data = '!user'}
         }
     }
     return keyboard
@@ -115,7 +112,7 @@ local action = function(msg, blocks, ln)
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             return
         end
-        local res = api.sendKeyboard(msg.from.id, 'Elige un  *rol* para ver los comandos disponibles:', keyboard, true)
+        local res = api.sendKeyboard(msg.from.id, 'Select a  *role* to view the available commands:', keyboard, true)
         if res then
             api.sendMessage(msg.chat.id, lang[ln].help.group_success, true)
         else
@@ -130,7 +127,7 @@ local action = function(msg, blocks, ln)
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             return
         end
-        local res = api.sendKeyboard(msg.from.id, 'Bienvenido a la pantalla de inicio, elige un  *rol* para ver los comandos disponibles:', keyboard, true)
+        local res = api.sendKeyboard(msg.from.id, 'Welcome to the Home screen, choose a *role* to see the available commands:', keyboard, true)
         if res then
             api.sendMessage(msg.chat.id, lang[ln].help.group_success, true)
         else
@@ -178,7 +175,7 @@ local action = function(msg, blocks, ln)
         keyboard = make_keyboard(with_mods_lines, query)
         local res, code = api.editMessageText(msg.chat.id, msg.message_id, text, keyboard, true)
         if not res and code and code == 111 then
-            api.answerCallbackQuery(msg.cb_id, '❗️ Already on this tab')
+            api.answerCallbackQuery(msg.cb_id, '❗️ Already on This tab')
         elseif query ~= 'user' and query ~= 'mod' and query ~= 'info_button' then
             api.answerCallbackQuery(msg.cb_id, '💡 '..lang[ln].help.mods[query]:sub(1, string.find(lang[ln].help.mods[query], '\n')):mEscape_hard())
         end
