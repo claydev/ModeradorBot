@@ -9,15 +9,15 @@ local action = function(msg, blocks, ln)
     math.randomseed( os.time() );
  	var = math.random(0,4);
 	if var == 0 then
-   		api.sendMessage(msg.chat.id, 'Hola *' ..name.. '*', true)
+   		api.sendMessage(msg.chat.id, 'Hello *' ..name.. '*', true)
 	elseif var == 1 then
- 	   api.sendMessage(msg.chat.id, 'Hola *' ..name.. '* ¿Todo bien?', true)
+ 	   api.sendMessage(msg.chat.id, 'Hello *' ..name.. '*All good?', true)
 	elseif var == 2 then
- 	   api.sendMessage(msg.chat.id, 'Qué onda *' ..name.. '*, un gusto verte :)', true)
+ 	   api.sendMessage(msg.chat.id, 'Cool*' ..name.. '*, Nice to see you :)', true)
 	elseif var == 3 then
-  	   api.sendMessage(msg.chat.id, '*' ..name.. '* :) Hola', true)
+  	   api.sendMessage(msg.chat.id, '*' ..name.. '* :) Hello', true)
   	elseif var == 4 then
-  	   api.sendMessage(msg.chat.id, 'Sr *' ..name.. '*, un gusto verlo por aquí.', true)  
+  	   api.sendMessage(msg.chat.id, 'Mr *' ..name.. '*, good to see you around here.', true)  
   end
 end
 end
