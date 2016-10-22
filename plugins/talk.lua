@@ -8,7 +8,7 @@ local action = function(msg, blocks, ln)
 
 	if blocks[1] == 'talk' then
 		if not blocks[2] then
-			api.sendMessage(msg.from.id, 'Specify an id or reply with the message')
+			api.sendMessage(msg.from.id, 'Specify an id or reply With the message')
 			return
 		end
 		local id, text
