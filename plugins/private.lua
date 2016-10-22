@@ -2,9 +2,9 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Canal', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = 'GitHub', url = 'https://github.com/'},
-    		{text = 'Evalúame!', url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = 'Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    		{text = 'Dev', url = 'https://telegram.me/saadthamer'},
+    		{text = 'Start Bot!', url = 'https://telegram.me/storebot?start='..bot.username},
 		}
 	}
 	return keyboard
@@ -48,9 +48,9 @@ local action = function(msg, blocks, ln)
 		if msg.chat.type ~= 'private' then
         	return
     	end
-    	local text = 'This command *has been replaced!*\n\nNow you can start your message with an ! to communicate with the bot owner. Example:\n_!hello, how are you?_'
+    	local text = 'This command * Has Been Replaced! * \n\n you can start your message With an! to Communicate with the bot owner. Example: \n_ hello, how are you _!?'
     	if config.help_group and config.help_group ~= '' then
-    		text = text..'\n\nYou can also join the discussion group to ask your question/report a bug. You can join with [this link]('..config.help_group..')'
+    		text = text..'\n\nYou can join the discussion group Present to ask your question/report a bug. You can Join with [this link]('..config.help_group..')'
     	end
     	api.sendMessage(msg.chat.id, text, true)
     end
